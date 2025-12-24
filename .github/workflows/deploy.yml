@@ -25,6 +25,7 @@ jobs:
       - run: npm run build
         env:
           PUBLIC_MAPTILER_API_KEY: ${{ secrets.PUBLIC_MAPTILER_API_KEY }}
+          PUBLIC_MAPTILER_TILE_ID: ${{ secrets.PUBLIC_MAPTILER_TILE_ID }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
