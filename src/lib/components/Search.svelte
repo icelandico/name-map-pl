@@ -14,7 +14,7 @@
 		>Search
 	</button>
 </div>
-<!-- <button
+<button
 	class="mt-2 bg-gray-300 p-1 rounded cursor-pointer hover:bg-gray-200"
-	on:click={() => (searchStore.value = '')}>Clear search</button
-> -->
+	onclick={() => searchStore.reset()}>Reset</button
+>

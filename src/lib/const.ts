@@ -1,12 +1,21 @@
 export const getFilterPrefix = (value: string) => [
 	'all',
 	['has', 'name'],
-	['>=', ['index-of', value, ['get', 'name']], 0]
+	['==', ['index-of', ['downcase', value], ['downcase', ['get', 'name']]], 0]
 ];
 
 export const getFilterSuffix = (value: string) => [
 	'all',
 	['has', 'name'],
-	['>', ['index-of', value, ['get', 'name']], -1],
-	['==', ['index-of', value, ['get', 'name']], ['-', ['length', ['get', 'name']], value.length]]
+	[
+		'==',
+		['index-of', ['downcase', value], ['downcase', ['get', 'name']]],
+		['-', ['length', ['get', 'name']], ['length', ['downcase', value]]]
+	]
+];
+
+export const getDefaultFilter = (value: string) => [
+	'all',
+	['has', 'name'],
+	['>=', ['index-of', ['downcase', value], ['downcase', ['get', 'name']]], 0]
 ];
