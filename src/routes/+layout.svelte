@@ -6,6 +6,7 @@
 	import Search from '$lib/components/Search.svelte';
 	import Options from '$lib/components/Options.svelte';
 	import { mapStore } from '$lib/stores/mapStore.svelte';
+	import '@maptiler/sdk/dist/maptiler-sdk.css';
 	export const ssr = false;
 
 	onMount(async () => {
@@ -15,7 +16,6 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<link rel="styles" href="maptiler/sdk/dist/maptiler-sdk.css" />
 </svelte:head>
 
 <div id="map" style="width: 100%; height: 100vh;"></div>

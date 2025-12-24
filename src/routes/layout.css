@@ -1,1 +1,29 @@
 @import 'tailwindcss';
+
+#map {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.maplibregl-popup {
+	max-width: 400px;
+	font:
+		12px/20px 'Helvetica Neue',
+		Arial,
+		Helvetica,
+		sans-serif;
+}
+
+.maplibregl-popup-content {
+	padding: 1rem;
+}
+
+.popup-title {
+	font-weight: 700;
+}
+
+.maplibregl-popup-close-button {
+	right: 4px !important;
+}
