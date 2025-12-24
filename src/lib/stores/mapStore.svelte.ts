@@ -2,12 +2,12 @@ import type { FilterSpecification, Map } from '@maptiler/sdk';
 import * as maptilersdk from '@maptiler/sdk';
 import { SearchOption, searchStore } from './searchStore.svelte';
 import { getDefaultFilter, getFilterPrefix, getFilterSuffix } from '$lib/const';
-import { MAPTILER_API, MAPTILER_TILE_ID } from '$env/static/private';
+import { PUBLIC_MAPTILER_API, PUBLIC_MAPTILER_TILE_ID } from '$env/static/public';
 
 export const mapStore = $state({
 	map: null as Map | null,
 	setMap() {
-		maptilersdk.config.apiKey = MAPTILER_API;
+		maptilersdk.config.apiKey = PUBLIC_MAPTILER_API;
 		const map = new maptilersdk.Map({
 			container: 'map',
 			style: maptilersdk.MapStyle.BASIC_V2,
@@ -21,7 +21,7 @@ export const mapStore = $state({
 			if (this.map) {
 				this.map.addSource('miejscowosci', {
 					type: 'vector',
-					url: `https://api.maptiler.com/tiles/${MAPTILER_TILE_ID}/tiles.json`
+					url: `https://api.maptiler.com/tiles/${PUBLIC_MAPTILER_TILE_ID}/tiles.json`
 				});
 				this.map.addLayer({
 					id: 'points-data',
@@ -29,7 +29,7 @@ export const mapStore = $state({
 					source: 'miejscowosci',
 					'source-layer': 'prng_miejscowosci_shp',
 					paint: {
-						'circle-radius': 3,
+						'circle-radius': 4,
 						'circle-color': '#204a8c',
 						'circle-opacity': 0.8
 					}
