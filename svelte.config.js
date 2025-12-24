@@ -8,8 +8,8 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
+			pages: 'svelte-kit/output',
+			assets: 'svelte-kit/output',
 			fallback: 'index.html'
 		}),
 		paths: {
