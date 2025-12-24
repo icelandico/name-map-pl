@@ -13,7 +13,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: 'name-map-pl'
+			base: '/name-map-pl'
 		}
 	},
 	adapter: adapter()
