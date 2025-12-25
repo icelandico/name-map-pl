@@ -12,15 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      PUBLIC_MAPTILER_API: ${{ secrets.PUBLIC_MAPTILER_API }}
-      PUBLIC_MAPTILER_TILE_ID: ${{ secrets.PUBLIC_MAPTILER_TILE_ID }}
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Secrets expression check
-        run: echo "secrets expressions: PUBLIC_MAPTILER_API set: ${{ secrets.PUBLIC_MAPTILER_API != '' }}, PUBLIC_MAPTILER_TILE_ID set: ${{ secrets.PUBLIC_MAPTILER_TILE_ID != '' }}"
 
       - uses: actions/setup-node@v4
         with:
@@ -28,18 +22,13 @@ jobs:
 
       - run: npm ci
 
-      - name: Verify env presence
+      - name: Create .env from secrets
         run: |
-          if [ -n "$PUBLIC_MAPTILER_API" ]; then
-            echo "PUBLIC_MAPTILER_API set: yes"
-          else
-            echo "PUBLIC_MAPTILER_API set: no"
-          fi
-          if [ -n "$PUBLIC_MAPTILER_TILE_ID" ]; then
-            echo "PUBLIC_MAPTILER_TILE_ID set: yes"
-          else
-            echo "PUBLIC_MAPTILER_TILE_ID set: no"
-          fi
+          cat > .env << 'EOF'
+          PUBLIC_MAPTILER_API=${{ secrets.PUBLIC_MAPTILER_API }}
+          PUBLIC_MAPTILER_TILE_ID=${{ secrets.PUBLIC_MAPTILER_TILE_ID }}
+          EOF
+          echo "✓ .env created with API keys"
 
       - run: npm run build
 
