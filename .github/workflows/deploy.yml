@@ -19,6 +19,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Secrets expression check
+        run: echo "secrets expressions: PUBLIC_MAPTILER_API set: ${{ secrets.PUBLIC_MAPTILER_API != '' }}, PUBLIC_MAPTILER_TILE_ID set: ${{ secrets.PUBLIC_MAPTILER_TILE_ID != '' }}"
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
