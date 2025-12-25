@@ -3,7 +3,7 @@ import * as maptilersdk from '@maptiler/sdk';
 import { SearchOption, searchStore } from './searchStore.svelte';
 import { getDefaultFilter, getFilterPrefix, getFilterSuffix } from '$lib/const';
 import { PUBLIC_MAPTILER_API, PUBLIC_MAPTILER_TILE_ID } from '$env/static/public';
-
+console.log('API', PUBLIC_MAPTILER_API);
 export const mapStore = $state({
 	map: null as Map | null,
 	setMap() {
@@ -38,7 +38,7 @@ export const mapStore = $state({
 		});
 
 		map.on('click', 'points-data', function (e) {
-			const coordinates = e?.features?.[0].geometry.coordinates.slice();
+			const coordinates = e?.features?.[0].geometry.coordinates?.slice();
 			const pointName = e?.features?.[0].properties.name;
 			const pointType = e?.features?.[0].properties.rodzaj;
 			const popupHTML = `
