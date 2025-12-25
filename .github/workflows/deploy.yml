@@ -26,7 +26,17 @@ jobs:
       - run: npm ci
 
       - name: Verify env presence
-        run: echo "PUBLIC_MAPTILER_API set: ${PUBLIC_MAPTILER_API:+yes}, TILE_ID set: ${PUBLIC_MAPTILER_TILE_ID:+yes}"
+        run: |
+          if [ -n "$PUBLIC_MAPTILER_API" ]; then
+            echo "PUBLIC_MAPTILER_API set: yes"
+          else
+            echo "PUBLIC_MAPTILER_API set: no"
+          fi
+          if [ -n "$PUBLIC_MAPTILER_TILE_ID" ]; then
+            echo "PUBLIC_MAPTILER_TILE_ID set: yes"
+          else
+            echo "PUBLIC_MAPTILER_TILE_ID set: no"
+          fi
 
       - run: npm run build
 
