@@ -12,6 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_MAPTILER_API: ${{ secrets.PUBLIC_MAPTILER_API }}
+      PUBLIC_MAPTILER_TILE_ID: ${{ secrets.PUBLIC_MAPTILER_TILE_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -22,10 +25,10 @@ jobs:
 
       - run: npm ci
 
+      - name: Verify env presence
+        run: echo "PUBLIC_MAPTILER_API set: ${PUBLIC_MAPTILER_API:+yes}, TILE_ID set: ${PUBLIC_MAPTILER_TILE_ID:+yes}"
+
       - run: npm run build
-        env:
-          PUBLIC_MAPTILER_API: ${{ secrets.PUBLIC_MAPTILER_API }}
-          PUBLIC_MAPTILER_TILE_ID: ${{ secrets.PUBLIC_MAPTILER_TILE_ID }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
