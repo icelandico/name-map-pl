@@ -8,6 +8,7 @@
 	import { mapStore } from '$lib/stores/mapStore.svelte';
 	import '@maptiler/sdk/dist/maptiler-sdk.css';
 	import PredefinedOptions from '$lib/components/PredefinedOptions.svelte';
+	import Author from '$lib/components/Author.svelte';
 
 	onMount(async () => {
 		mapStore.setMap();
@@ -19,12 +20,13 @@
 </svelte:head>
 
 <div id="map" style="width: 100%; height: 100vh;"></div>
-<div class="absolute top-4 left-4 z-10 bg-gray-100 p-2 rounded-md">
+<div class="absolute top-2 left-2 z-10 bg-gray-100 p-2 rounded-md shadow-md">
 	<div class="flex gap-4">
 		<Options />
 		<PredefinedOptions />
 	</div>
 	<Search />
+	<Author />
 </div>
 
 {@render children()}

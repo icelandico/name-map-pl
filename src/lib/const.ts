@@ -33,5 +33,8 @@ export const PREDEFINED_OPTIONS = [
 	{ label: 'Ending with "-chów"', value: '-chów' },
 	{ label: 'Ending with "-szew"', value: '-szew' },
 	{ label: 'Ending with "-góra"', value: '-góra' },
-	{ label: 'Ending with "-rsk"', value: '-rsk' }
+	{ label: 'Ending with "-rsk"', value: '-rsk' },
+	{ label: 'Ending with "-wieś"', value: '-wieś' },
+	{ label: 'Ending with "-wieś"', value: '-miasto' },
+	{ label: 'Ending with "-wieś"', value: '-wiec' }
 ];
