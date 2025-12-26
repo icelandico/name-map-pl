@@ -3,7 +3,7 @@ import * as maptilersdk from '@maptiler/sdk';
 import { SearchOption, searchStore } from './searchStore.svelte';
 import { getDefaultFilter, getFilterPrefix, getFilterSuffix } from '$lib/const';
 import { PUBLIC_MAPTILER_API, PUBLIC_MAPTILER_TILE_ID } from '$env/static/public';
-console.log('API', PUBLIC_MAPTILER_API);
+
 export const mapStore = $state({
 	map: null as Map | null,
 	setMap() {
