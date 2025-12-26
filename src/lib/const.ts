@@ -1,3 +1,5 @@
+import { m } from '$lib/paraglide/messages';
+
 export const getDefaultFilter = (value: string) => [
 	'all',
 	['has', 'name'],
@@ -22,19 +24,19 @@ export const getFilterSuffix = (value: string) => [
 ];
 
 export const PREDEFINED_OPTIONS = [
-	{ label: 'Starting with "Now"', value: 'now-' },
-	{ label: 'Starting with "Star"', value: 'star-' },
-	{ label: 'Starting with "Mał"', value: 'mał-' },
-	{ label: 'Ending with "-jmy"', value: '-jmy' },
-	{ label: 'Ending with "-szki"', value: '-szki' },
-	{ label: 'Ending with "-ork"', value: '-ork' },
-	{ label: 'Ending with "-ów"', value: '-ów' },
-	{ label: 'Ending with "-ówek"', value: '-ówek' },
-	{ label: 'Ending with "-chów"', value: '-chów' },
-	{ label: 'Ending with "-szew"', value: '-szew' },
-	{ label: 'Ending with "-góra"', value: '-góra' },
-	{ label: 'Ending with "-rsk"', value: '-rsk' },
-	{ label: 'Ending with "-wieś"', value: '-wieś' },
-	{ label: 'Ending with "-wieś"', value: '-miasto' },
-	{ label: 'Ending with "-wieś"', value: '-wiec' }
+	{ label: m.option_starting({ phrase: 'Now' }), value: 'now-' },
+	{ label: m.option_starting({ phrase: 'Star' }), value: 'star-' },
+	{ label: m.option_starting({ phrase: 'Mał' }), value: 'mał-' },
+	{ label: m.option_ending({ phrase: '-jmy' }), value: '-jmy' },
+	{ label: m.option_ending({ phrase: '-szki' }), value: '-szki' },
+	{ label: m.option_ending({ phrase: '-ork' }), value: '-ork' },
+	{ label: m.option_ending({ phrase: '-ów' }), value: '-ów' },
+	{ label: m.option_ending({ phrase: '-ówek' }), value: '-ówek' },
+	{ label: m.option_ending({ phrase: '-chów' }), value: '-chów' },
+	{ label: m.option_ending({ phrase: '-szew' }), value: '-szew' },
+	{ label: m.option_ending({ phrase: '-góra' }), value: '-góra' },
+	{ label: m.option_ending({ phrase: '-rsk' }), value: '-rsk' },
+	{ label: m.option_ending({ phrase: '-wieś' }), value: '-wieś' },
+	{ label: m.option_ending({ phrase: '-miasto' }), value: '-miasto' },
+	{ label: m.option_ending({ phrase: '-wiec' }), value: '-wiec' }
 ];

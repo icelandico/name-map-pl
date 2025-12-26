@@ -1,9 +1,10 @@
 <script>
 	import { SearchOption, searchStore } from '$lib/stores/searchStore.svelte';
+	import * as m from '$lib/paraglide/messages.js';
 </script>
 
 <div>
-	<p>Choose search option</p>
+	<p class="font-bold">{m.choose_search_option()}</p>
 	<input
 		type="radio"
 		id="option-all"
@@ -11,7 +12,7 @@
 		value={SearchOption.ALL}
 		bind:group={searchStore.option}
 	/>
-	<label for="option-all">Search all</label><br />
+	<label for="option-all">{m.all()}</label><br />
 
 	<input
 		type="radio"
@@ -20,7 +21,7 @@
 		value={SearchOption.PREFIX}
 		bind:group={searchStore.option}
 	/>
-	<label for="option-prefix">Prefix only</label><br />
+	<label for="option-prefix">{m.starting_with()}</label><br />
 
 	<input
 		type="radio"
@@ -29,5 +30,5 @@
 		value={SearchOption.SUFFIX}
 		bind:group={searchStore.option}
 	/>
-	<label for="option-suffix">Suffix only</label><br /><br />
+	<label for="option-suffix">{m.ending_with()}</label><br /><br />
 </div>

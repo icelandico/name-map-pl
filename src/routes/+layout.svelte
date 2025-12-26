@@ -9,6 +9,7 @@
 	import '@maptiler/sdk/dist/maptiler-sdk.css';
 	import PredefinedOptions from '$lib/components/PredefinedOptions.svelte';
 	import Author from '$lib/components/Author.svelte';
+	import LangToggle from '$lib/components/LangToggle.svelte';
 
 	onMount(async () => {
 		mapStore.setMap();
@@ -27,6 +28,7 @@
 	</div>
 	<Search />
 	<Author />
+	<LangToggle />
 </div>
 
 {@render children()}

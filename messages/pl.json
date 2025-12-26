@@ -1,4 +1,14 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from pl!"
+	"choose_search_option": "Wybierz typ szukania",
+	"choose_option": "Wybierz opcję",
+	"all": "Wszystko",
+	"starting_with": "Zaczynające się od",
+	"ending_with": "Kończące się na",
+	"predefined_options": "Predefiniowane opcje",
+	"search": "Szukaj",
+	"author": "Autor",
+	"type_phrase": "Wpisz frazę",
+	"option_starting": "Zaczynające się od {phrase}",
+	"option_ending": "Kończące się na {phrase}"
 }
