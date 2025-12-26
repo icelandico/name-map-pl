@@ -22,13 +22,13 @@
 
 <div id="map" style="width: 100%; height: 100vh;"></div>
 <div class="absolute top-2 left-2 z-10 bg-gray-100 p-2 rounded-md shadow-md">
-	<div class="flex gap-4">
+	<LangToggle />
+	<div class="flex gap-4 mt-2">
 		<Options />
 		<PredefinedOptions />
 	</div>
 	<Search />
 	<Author />
-	<LangToggle />
 </div>
 
 {@render children()}
