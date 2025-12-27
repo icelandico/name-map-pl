@@ -10,6 +10,9 @@
 	import PredefinedOptions from '$lib/components/PredefinedOptions.svelte';
 	import Author from '$lib/components/Author.svelte';
 	import LangToggle from '$lib/components/LangToggle.svelte';
+	import { getLocale } from '$lib/paraglide/runtime';
+
+	const appName = getLocale() === 'pl' ? 'Nazwowo' : 'Place Finder PL';
 
 	onMount(async () => {
 		mapStore.setMap();
@@ -18,6 +21,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>{appName}</title>
 </svelte:head>
 
 <div id="map" style="width: 100%; height: 100vh;"></div>

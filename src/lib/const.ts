@@ -41,6 +41,7 @@ export const PREDEFINED_OPTIONS = [
 	{ label: m.option_ending({ phrase: '-miasto' }), value: '-miasto' },
 	{ label: m.option_ending({ phrase: '-wiec' }), value: '-wiec' },
 	{ label: m.option_ending({ phrase: '-owa' }), value: '-owa' },
+	{ label: m.option_ending({ phrase: '-owo' }), value: '-owo' },
 	{ label: m.option_ending({ phrase: '-izna' }), value: '-izna' },
 	{ label: m.option_ending({ phrase: '-icze' }), value: '-icze' }
 ];
