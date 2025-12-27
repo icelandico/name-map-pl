@@ -10,5 +10,14 @@
 	"author": "Autor",
 	"type_phrase": "Wpisz frazę",
 	"option_starting": "Zaczynające się od {phrase}",
-	"option_ending": "Kończące się na {phrase}"
+	"option_ending": "Kończące się na {phrase}",
+	"point_type_city": "miasto",
+	"point_type_village": "wieś",
+	"point_type_district": "część miasta",
+	"point_type_hamlet": "osada",
+	"point_type_colony": "kolonia",
+	"point_type_przysiolek": "przysiółek",
+	"point_type_hamlets_hamlet": "osada osady",
+	"name": "Nazwa",
+	"point_type": "Typ miejscowości"
 }

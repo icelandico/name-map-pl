@@ -10,5 +10,16 @@
 	"author": "Author",
 	"type_phrase": "Type phrase",
 	"option_starting": "Starting with {phrase}",
-	"option_ending": "Ending with {phrase}"
+	"option_ending": "Ending with {phrase}",
+	"point_type_city": "city",
+	"point_type_village": "village",
+	"point_type_district": "district",
+	"point_type_hamlet": "hamlet",
+	"point_type_colony": "colony",
+	"point_type_przysiolek": "hamlet",
+	"point_type_hamlets_hamlet": "hamlet",
+	"point_type_other": "other",
+	"point_type_neighborhood": "neighborhood",
+	"name": "Name",
+	"point_type": "Settlement type"
 }

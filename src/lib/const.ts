@@ -1,4 +1,5 @@
 import { m } from '$lib/paraglide/messages';
+import { getLocale } from '$lib/paraglide/runtime';
 
 export const getDefaultFilter = (value: string) => [
 	'all',
@@ -38,5 +39,33 @@ export const PREDEFINED_OPTIONS = [
 	{ label: m.option_ending({ phrase: '-rsk' }), value: '-rsk' },
 	{ label: m.option_ending({ phrase: '-wieś' }), value: '-wieś' },
 	{ label: m.option_ending({ phrase: '-miasto' }), value: '-miasto' },
-	{ label: m.option_ending({ phrase: '-wiec' }), value: '-wiec' }
+	{ label: m.option_ending({ phrase: '-wiec' }), value: '-wiec' },
+	{ label: m.option_ending({ phrase: '-owa' }), value: '-owa' },
+	{ label: m.option_ending({ phrase: '-izna' }), value: '-izna' },
+	{ label: m.option_ending({ phrase: '-icze' }), value: '-icze' }
 ];
+
+export function pointTypeMapper(type: string) {
+	if (getLocale() === 'pl') return type;
+
+	switch (type) {
+		case 'miasto':
+			return m.point_type_city();
+		case 'wieś':
+			return m.point_type_village();
+		case 'część miasta':
+			return m.point_type_district();
+		case 'osada osady':
+			return m.point_type_hamlets_hamlet();
+		case 'osada':
+			return m.point_type_hamlet();
+		case 'kolonia':
+			return m.point_type_colony();
+		case 'przysiółek':
+			return m.point_type_przysiolek();
+		case 'osiedle':
+			return m.point_type_neighborhood();
+		default:
+			return m.point_type_other();
+	}
+}

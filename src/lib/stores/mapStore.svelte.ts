@@ -1,8 +1,9 @@
 import type { FilterSpecification, Map } from '@maptiler/sdk';
 import * as maptilersdk from '@maptiler/sdk';
 import { SearchOption, searchStore } from './searchStore.svelte';
-import { getDefaultFilter, getFilterPrefix, getFilterSuffix } from '$lib/const';
+import { getDefaultFilter, getFilterPrefix, getFilterSuffix, pointTypeMapper } from '$lib/const';
 import { PUBLIC_MAPTILER_API, PUBLIC_MAPTILER_TILE_ID } from '$env/static/public';
+import { m } from '$lib/paraglide/messages';
 
 export const mapStore = $state({
 	map: null as Map | null,
@@ -43,8 +44,8 @@ export const mapStore = $state({
 			const pointType = e?.features?.[0].properties.rodzaj;
 			const popupHTML = `
 			<div class="popup-content">
-				<h1 class="popup-title">Nazwa: ${pointName}</h1>
-				<h1 class="popup-type">Typ miejscowości: ${pointType}</h1>
+				<h1 class="popup-title">${m.name()}: ${pointName}</h1>
+				<h1 class="popup-type">${m.point_type()}: ${pointTypeMapper(pointType)}</h1>
 			</div>
 			`;
 
@@ -63,6 +64,9 @@ export const mapStore = $state({
 		});
 	},
 	currentFilter() {
+		if (searchStore.value === undefined || searchStore.value.trim() === '') {
+			return getDefaultFilter('') as FilterSpecification;
+		}
 		if (searchStore.option === SearchOption.SUFFIX) {
 			return getFilterSuffix(searchStore.value) as FilterSpecification;
 		}
